@@ -7,6 +7,9 @@ import ibitira from "../../img/Ibitira.png";
 import siderolitos from "../../img/siderolitos.png";
 function Home() {
   const [order, setOrder] = useState("Crescente");
+  const [search, setSearch] = useState("")
+  const [minValor, setMinValor] = useState(-Infinity)
+  const [maxValor, setMaxValor] = useState(+Infinity)
   const [produtos, setProdutos] = useState([
     {
       id: 1,
@@ -36,8 +39,35 @@ function Home() {
   const onChangeOrder = (event) => {
     setOrder(event.target.value);
   };
+  const onChangeSearch = (event) => {
+    setSearch(event.target.value)
+  }
+  const onChangeMinValor = (event) => {
+    setMinValor(event.target.value)
+  }
+  const onChangeMaxValor = (event) => {
+    setMaxValor(event.target.value)
+  }
 
-  const listaDeProdutos = produtos.map((produto) => {
+
+  // const filtro = produtos.
+  const resultado = produtos.sort((a,b)=>{
+      switch(order){
+        case "Crescente": 
+        return a.valor - b.valor;
+        case "Decrescente":
+          return b.valor - a.valor
+      }
+  }).filter((item)=> {
+    const itemName = item.name.toLowerCase()
+    return itemName.includes(search)
+  }).filter((item)=> {
+    return item.valor >= minValor
+  }).filter((item)=> {
+    return item.valor <= maxValor
+  })
+
+  const listaDeProdutos = resultado.map((produto) => {
     return (
       <Card
         imagem={produto.imagem}
@@ -46,20 +76,30 @@ function Home() {
         produtos={produto}
       />
     );
-  });
-
+  })
   // const renderiza = produtos.map((produto) => {
   //   return <Card imagem={produto.imagem} name={produto.name} valor={produto.valor} produtos={produto}/>
   // })
   return (
     <C.Container>
       <div>
+        <input placeholder="Buscar" value={search} onChange={onChangeSearch}/>   
+        <input type="number" 
+        placeholder="Valor min" 
+        value={minValor} 
+        onChange={onChangeMinValor}/>
+
+        <input type="number" placeholder="Valor Max" value={maxValor} onChange={onChangeMaxValor}/>
+       
         <select value={order} onChange={onChangeOrder}>
           <option value="Crescente">Crescente</option>
           <option value="Decrescente">Decrescente</option>
         </select>
+
       </div>
-      <C.ContainerFilho>{listaDeProdutos}</C.ContainerFilho>
+      <C.ContainerFilho>
+        {listaDeProdutos}
+      </C.ContainerFilho>
     </C.Container>
   );
 }
