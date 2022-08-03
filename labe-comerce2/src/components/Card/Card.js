@@ -9,6 +9,7 @@ export function Card(props) {
           <h1>{props.name}</h1>
           <img src={props.imagem}></img>
           <p> R$ {props.valor}</p>
+          <button>Adicionar ao Carrinho</button>
         </C.AreaCardFilho>
       </C.AreaCard>
     </div>
