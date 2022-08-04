@@ -5,11 +5,13 @@ import angra from "../../img/angra.png";
 import governador from "../../img/governador.png";
 import ibitira from "../../img/Ibitira.png";
 import siderolitos from "../../img/siderolitos.png";
+import imagemTerra from "../../img/fundo.jpg";
+
 function Home() {
   const [order, setOrder] = useState("Crescente");
-  const [search, setSearch] = useState("")
-  const [minValor, setMinValor] = useState(-Infinity)
-  const [maxValor, setMaxValor] = useState(+Infinity)
+  const [search, setSearch] = useState("");
+  const [minValor, setMinValor] = useState(-Infinity);
+  const [maxValor, setMaxValor] = useState(+Infinity);
   const [produtos, setProdutos] = useState([
     {
       id: 1,
@@ -40,32 +42,35 @@ function Home() {
     setOrder(event.target.value);
   };
   const onChangeSearch = (event) => {
-    setSearch(event.target.value)
-  }
+    setSearch(event.target.value);
+  };
   const onChangeMinValor = (event) => {
-    setMinValor(event.target.value)
-  }
+    setMinValor(event.target.value);
+  };
   const onChangeMaxValor = (event) => {
-    setMaxValor(event.target.value)
-  }
-
+    setMaxValor(event.target.value);
+  };
 
   // const filtro = produtos.
-  const resultado = produtos.sort((a,b)=>{
-      switch(order){
-        case "Crescente": 
-        return a.valor - b.valor;
+  const resultado = produtos
+    .sort((a, b) => {
+      switch (order) {
+        case "Crescente":
+          return a.valor - b.valor;
         case "Decrescente":
-          return b.valor - a.valor
+          return b.valor - a.valor;
       }
-  }).filter((item)=> {
-    const itemName = item.name.toLowerCase()
-    return itemName.includes(search)
-  }).filter((item)=> {
-    return item.valor >= minValor
-  }).filter((item)=> {
-    return item.valor <= maxValor
-  })
+    })
+    .filter((item) => {
+      const itemName = item.name.toLowerCase();
+      return itemName.includes(search);
+    })
+    .filter((item) => {
+      return item.valor >= minValor;
+    })
+    .filter((item) => {
+      return item.valor <= maxValor;
+    });
 
   const listaDeProdutos = resultado.map((produto) => {
     return (
@@ -76,30 +81,35 @@ function Home() {
         produtos={produto}
       />
     );
-  })
+  });
   // const renderiza = produtos.map((produto) => {
   //   return <Card imagem={produto.imagem} name={produto.name} valor={produto.valor} produtos={produto}/>
   // })
   return (
     <C.Container>
+      <C.ImagemTerra></C.ImagemTerra>
       <div>
-        <input placeholder="Buscar" value={search} onChange={onChangeSearch}/>   
-        <input type="number" 
-        placeholder="Valor min" 
-        value={minValor} 
-        onChange={onChangeMinValor}/>
+        <input placeholder="Buscar" value={search} onChange={onChangeSearch} />
+        <input
+          type="number"
+          placeholder="Valor min"
+          value={minValor}
+          onChange={onChangeMinValor}
+        />
 
-        <input type="number" placeholder="Valor Max" value={maxValor} onChange={onChangeMaxValor}/>
-       
+        <input
+          type="number"
+          placeholder="Valor Max"
+          value={maxValor}
+          onChange={onChangeMaxValor}
+        />
+
         <select value={order} onChange={onChangeOrder}>
           <option value="Crescente">Crescente</option>
           <option value="Decrescente">Decrescente</option>
         </select>
-
       </div>
-      <C.ContainerFilho>
-        {listaDeProdutos}
-      </C.ContainerFilho>
+      <C.ContainerFilho>{listaDeProdutos}</C.ContainerFilho>
     </C.Container>
   );
 }
