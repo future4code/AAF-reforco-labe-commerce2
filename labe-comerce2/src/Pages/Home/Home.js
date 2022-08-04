@@ -5,7 +5,8 @@ import angra from "../../img/angra.png";
 import governador from "../../img/governador.png";
 import ibitira from "../../img/Ibitira.png";
 import siderolitos from "../../img/siderolitos.png";
-import imagemTerra from "../../img/fundo.jpg";
+import metebonito from "../../img/metebonito.png";
+import chilenho from "../../img/Chilenho.png";
 
 function Home() {
   const [order, setOrder] = useState("Crescente");
@@ -39,14 +40,14 @@ function Home() {
     },
     {
       id: 5,
-      imagem: siderolitos,
-      name: "Siderolitos",
+      imagem: metebonito,
+      name: "Askri",
       valor: 15.8,
     },
     {
       id: 6,
-      imagem: siderolitos,
-      name: "Siderolitos",
+      imagem: chilenho,
+      name: "Chilenho",
       valor: 15.8,
     },
   ]);
@@ -100,7 +101,7 @@ function Home() {
   return (
     <C.Container>
    
-      <div>
+      <C.Filtrozin>
         <input placeholder="Buscar" value={search} onChange={onChangeSearch} />
         <input
           type="number"
@@ -120,7 +121,7 @@ function Home() {
           <option value="Crescente">Crescente</option>
           <option value="Decrescente">Decrescente</option>
         </select>
-      </div>
+      </C.Filtrozin>
       <C.ContainerFilho>
         {listaDeProdutos}
         </C.ContainerFilho>

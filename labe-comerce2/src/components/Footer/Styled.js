@@ -1,7 +1,20 @@
 import styled from "styled-components";
 
 export const FooterBonito = styled.footer`
-  height: 30px;
-  background-color: blue;
+  height: 80px;
+  background-color: black;
   color: white;
-`;
+  /* background: transparent; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+`
+export const Devs = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+p {
+  padding: 0px 10px;
+}
+`

@@ -11,7 +11,7 @@ export function Card(props) {
           <C.AreaImg>
           <img src={props.imagem}></img>
           </C.AreaImg>
-          <p> R$ {props.valor}</p>
+          <p> R$ {props.valor.toFixed(2)}</p>
           <button>Adicionar ao Carrinho</button>
           </C.AreaNeto>
         </C.AreaCardFilho>

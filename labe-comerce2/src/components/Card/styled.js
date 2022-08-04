@@ -5,7 +5,8 @@ export const AreaCard = styled.div`
   flex-direction: column;
   text-align: center;
   flex-wrap: wrap;
-`;
+  
+`
 export const AreaCardFilho = styled.div`
   display: flex;
   flex-direction: column;
@@ -15,13 +16,27 @@ export const AreaCardFilho = styled.div`
   width: 500px;
   height: 450px;
   color: white;
-  border: 1px solid black
+  border: 1px solid black;
+ 
 `
 
 export const AreaNeto = styled.div`
   box-shadow: 0px 3px 16px white;
+  border-radius: 25px;
   width: 400px;
   height: 400px;
+button {
+  color: white;
+  background: transparent;
+  padding: 5px 10px;
+  border: solid white 1px;
+  border-radius: 10px;
+  margin-top: 5px;
+  transition: 0.2s;
+  :hover{
+    background-color: #393186;
+  }
+}
 `
 export const AreaImg = styled.div`
   height: 300px;

@@ -4,7 +4,19 @@ import * as C from "./Styled";
 function Footer() {
   return (
     <C.FooterBonito>
-      <footer>Footer</footer>
+
+      <C.Devs>
+        <h3>Desenvolvedores:</h3>
+        <p>Carlos Sousa</p>
+        -
+        <p>Fernanda Tiyomi</p>
+        -
+        <p>Lakshmi M. Bittencourt</p>
+        <p>© Copyright 2001-2022</p>
+      </C.Devs>
+
+     
+
     </C.FooterBonito>
   );
 }

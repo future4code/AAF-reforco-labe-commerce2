@@ -6,14 +6,23 @@ export const AreaHeader = styled.header`
   color: white;
   background: transparent;
   display: flex;
-  
-`;
+  position: fixed;
+  width: 100%;
+
+`
+
 export const AreaCenter = styled.header`
 display: flex;
-justify-content: space-around;
+justify-content: space-between;
 align-items:center;
 margin: auto;
 width: 100%;
+
+`
+export const FotoNome = styled.div`
+  display: flex;
+  align-items: center;
+  
 `
 
 export const AreaList = styled.div`
