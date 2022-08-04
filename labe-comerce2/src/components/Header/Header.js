@@ -4,7 +4,18 @@ import * as C from "./Styled";
 function Header() {
   return (
     <C.AreaHeader>
-      <header>Header</header>
+      <C.AreaCenter>
+        <h1>LabeEcomerce</h1>
+
+        <C.AreaList>
+          <ul>
+            <li>Home</li>
+            <li>Login</li>
+            <li>Suporte</li>
+            <li>Configurações</li>
+          </ul>
+        </C.AreaList>
+      </C.AreaCenter>
     </C.AreaHeader>
   );
 }
