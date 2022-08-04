@@ -37,6 +37,18 @@ function Home() {
       name: "Siderolitos",
       valor: 15.8,
     },
+    {
+      id: 5,
+      imagem: siderolitos,
+      name: "Siderolitos",
+      valor: 15.8,
+    },
+    {
+      id: 6,
+      imagem: siderolitos,
+      name: "Siderolitos",
+      valor: 15.8,
+    },
   ]);
   const onChangeOrder = (event) => {
     setOrder(event.target.value);
@@ -87,7 +99,7 @@ function Home() {
   // })
   return (
     <C.Container>
-      <C.ImagemTerra></C.ImagemTerra>
+   
       <div>
         <input placeholder="Buscar" value={search} onChange={onChangeSearch} />
         <input
@@ -109,7 +121,9 @@ function Home() {
           <option value="Decrescente">Decrescente</option>
         </select>
       </div>
-      <C.ContainerFilho>{listaDeProdutos}</C.ContainerFilho>
+      <C.ContainerFilho>
+        {listaDeProdutos}
+        </C.ContainerFilho>
     </C.Container>
   );
 }

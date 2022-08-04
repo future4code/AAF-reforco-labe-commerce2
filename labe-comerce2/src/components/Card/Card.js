@@ -3,15 +3,19 @@ import React, { useState, useEffect } from "react";
 
 export function Card(props) {
   return (
-    <div>
+  
       <C.AreaCard>
         <C.AreaCardFilho>
+          <C.AreaNeto>
           <h1>{props.name}</h1>
+          <C.AreaImg>
           <img src={props.imagem}></img>
+          </C.AreaImg>
           <p> R$ {props.valor}</p>
           <button>Adicionar ao Carrinho</button>
+          </C.AreaNeto>
         </C.AreaCardFilho>
       </C.AreaCard>
-    </div>
+  
   );
 }
