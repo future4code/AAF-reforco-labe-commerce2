@@ -1,8 +1,15 @@
 import React from "react";
 import * as C from "./Styled";
 import vaza from "../../img/vaza.png";
+import {useNavigate} from "react-router-dom";
 
-function Header(props) {
+function Header() {
+  const navigate = useNavigate()
+
+  const irParaCarrinho = () => {
+    navigate("/cart")
+  }
+
   return (
     <C.AreaHeader>
       <C.AreaCenter>
@@ -14,7 +21,7 @@ function Header(props) {
 
         <C.AreaList>
           <ul>
-            <li>Carrinho</li>
+            <buttom onClick={irParaCarrinho}>Carrinho</buttom>
           </ul>
         </C.AreaList>
       </C.AreaCenter>
