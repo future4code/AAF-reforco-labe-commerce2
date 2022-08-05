@@ -17,7 +17,9 @@ export const AreaCardFilho = styled.div`
   height: 450px;
   color: white;
   border: 1px solid black;
- 
+  @media(max-width: 525px ){
+    max-width: 320px;
+  }
 `
 
 export const AreaNeto = styled.div`
@@ -25,6 +27,10 @@ export const AreaNeto = styled.div`
   border-radius: 25px;
   width: 400px;
   height: 400px;
+  border: 1px solid black;
+  @media(max-width: 525px ){
+    max-width: 300px;
+  }
 button {
   color: white;
   background: transparent;
@@ -39,6 +45,10 @@ button {
 }
 `
 export const AreaImg = styled.div`
-  height: 300px;
+
+`
+
+export const MaxImg = styled.img`
+  width: 300px;
 `
 

@@ -7,12 +7,14 @@ import ibitira from "../../img/Ibitira.png";
 import siderolitos from "../../img/siderolitos.png";
 import metebonito from "../../img/metebonito.png";
 import chilenho from "../../img/Chilenho.png";
+import Cart from "./Cart/Cart";
 
 function Home() {
   const [order, setOrder] = useState("Crescente");
   const [search, setSearch] = useState("");
   const [minValor, setMinValor] = useState(-Infinity);
   const [maxValor, setMaxValor] = useState(+Infinity);
+  const [cart, setCart] = useState([])
   const [produtos, setProdutos] = useState([
     {
       id: 1,
@@ -64,7 +66,26 @@ function Home() {
     setMaxValor(event.target.value);
   };
 
-  // const filtro = produtos.
+  // const filtro = produtos
+
+ const carrinho = (id) => {
+    const selectItem = produtos.filter((item)=> {
+    if(item.id === id){
+      return cart.push({id: id})
+    }
+    })
+   
+    setCart(selectItem)
+    console.log(selectItem)
+  }
+
+  const enviarCart = cart.map((item)=> {
+    return <Cart
+        cart={item}
+      />
+  })
+
+
   const resultado = produtos
     .sort((a, b) => {
       switch (order) {
@@ -91,7 +112,8 @@ function Home() {
         imagem={produto.imagem}
         name={produto.name}
         valor={produto.valor}
-        produtos={produto}
+        id={produto.id}
+        carrinho={carrinho}
       />
     );
   });

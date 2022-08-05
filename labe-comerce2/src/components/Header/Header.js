@@ -2,7 +2,7 @@ import React from "react";
 import * as C from "./Styled";
 import vaza from "../../img/vaza.png";
 
-function Header() {
+function Header(props) {
   return (
     <C.AreaHeader>
       <C.AreaCenter>
@@ -14,10 +14,7 @@ function Header() {
 
         <C.AreaList>
           <ul>
-            <li>Home</li>
-            <li>Login</li>
-            <li>Suporte</li>
-            <li>Configurações</li>
+            <li>Carrinho</li>
           </ul>
         </C.AreaList>
       </C.AreaCenter>

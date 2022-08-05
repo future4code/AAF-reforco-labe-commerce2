@@ -17,9 +17,9 @@ export const ContainerFilho = styled.div`
 `
 export const Filtrozin = styled.div`
   display: flex;
+
   gap: 5px;
   margin-top: 100px;
-
 
 select {
   color: white;
@@ -28,13 +28,21 @@ select {
   padding: 4px 10px;
   border-radius: 10px;
 }
-input{
+input {
 
   color: #fff; 
   border: solid white 1px;
   background-color: transparent;
   padding: 5px 10px;
   border-radius: 10px;
-} 
+}
+
+@media(max-width: 715px) {
+  flex-direction: column;
+
+  input {
+    max-width: 400px;
+  }
+}
 `
 

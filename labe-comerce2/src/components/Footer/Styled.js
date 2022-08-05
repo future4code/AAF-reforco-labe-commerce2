@@ -8,6 +8,9 @@ export const FooterBonito = styled.footer`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  @media(max-width: 790px) {
+    height: 100%;
+}
 
 `
 export const Devs = styled.div`
@@ -16,5 +19,8 @@ export const Devs = styled.div`
   justify-content: center;
 p {
   padding: 0px 10px;
+}
+@media(max-width: 790px) {
+  flex-direction: column;
 }
 `
