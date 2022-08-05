@@ -1,0 +1,39 @@
+0 verbose cli D:\Program Files\nodejs\node.exe C:\Users\CarlosS\AppData\Roaming\npm\node_modules\npm\bin\npm-cli.js
+1 info using npm@8.14.0
+2 info using node@v14.17.0
+3 timing npm:load:whichnode Completed in 1ms
+4 timing config:load:defaults Completed in 3ms
+5 timing config:load:file:C:\Users\CarlosS\AppData\Roaming\npm\node_modules\npm\npmrc Completed in 934ms
+6 timing config:load:builtin Completed in 934ms
+7 timing config:load:cli Completed in 2ms
+8 timing config:load:env Completed in 1ms
+9 timing config:load:file:C:\Users\CarlosS\Desktop\AtividadeTeste\Reforco-labecomerce\AAF-reforco-labe-commerce2\labe-comerce2\.npmrc Completed in 0ms
+10 timing config:load:project Completed in 20ms
+11 timing config:load:file:C:\Users\CarlosS\.npmrc Completed in 3ms
+12 timing config:load:user Completed in 3ms
+13 timing config:load:file:C:\Users\CarlosS\AppData\Roaming\npm\etc\npmrc Completed in 9ms
+14 timing config:load:global Completed in 9ms
+15 timing config:load:validate Completed in 2ms
+16 timing config:load:credentials Completed in 10ms
+17 timing config:load:setEnvs Completed in 2ms
+18 timing config:load Completed in 989ms
+19 timing npm:load:configload Completed in 989ms
+20 timing npm:load:mkdirpcache Completed in 7ms
+21 timing npm:load:mkdirplogs Completed in 3ms
+22 verbose title npm run start
+23 verbose argv "run" "start"
+24 timing npm:load:setTitle Completed in 120ms
+25 timing config:load:flatten Completed in 19ms
+26 timing npm:load:display Completed in 21ms
+27 verbose logfile logs-max:10 dir:C:\Users\CarlosS\Desktop\AtividadeTeste\Reforco-labecomerce\AAF-reforco-labe-commerce2\labe-comerce2\tmpnodejsnpm-cache\_logs
+28 verbose logfile C:\Users\CarlosS\Desktop\AtividadeTeste\Reforco-labecomerce\AAF-reforco-labe-commerce2\labe-comerce2\tmpnodejsnpm-cache\_logs\2022-08-05T16_59_55_965Z-debug-0.log
+29 timing npm:load:logFile Completed in 12ms
+30 timing npm:load:timers Completed in 1ms
+31 timing npm:load:configScope Completed in 0ms
+32 timing npm:load Completed in 1157ms
+33 silly logfile start cleaning logs, removing 1 files
+34 silly logfile done cleaning log files
+35 timing command:run Completed in 4523011ms
+36 verbose exit 3221225786
+37 timing npm Completed in 4524301ms
+38 verbose code 3221225786

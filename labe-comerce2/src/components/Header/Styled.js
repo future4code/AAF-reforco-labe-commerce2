@@ -8,7 +8,6 @@ export const AreaHeader = styled.header`
   display: flex;
   position: fixed;
   width: 100%;
-
 `
 
 export const AreaCenter = styled.header`
@@ -17,7 +16,9 @@ justify-content: space-between;
 align-items:center;
 margin: auto;
 width: 100%;
-
+ @media(max-width: 795px){
+  justify-content: center;
+ }
 `
 export const FotoNome = styled.div`
   display: flex;
@@ -33,5 +34,8 @@ export const AreaList = styled.div`
   }
   li {
     padding: 20px;
+  }
+  @media(max-width: 795px){
+    display: none;
   }
 `
