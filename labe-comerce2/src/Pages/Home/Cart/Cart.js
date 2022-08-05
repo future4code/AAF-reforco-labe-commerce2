@@ -1,13 +1,14 @@
 import React from "react";
+import * as C from "../Cart/styled";
 
 function Cart(props) {
   const cartId = props.cart.id
   console.log(cartId)
   
   return (
-    <div>
+    <C.AreaCarrinho>
       <h1>{props.cart.id}</h1>
-    </div>
+    </C.AreaCarrinho>
   );
 }
 export default Cart;

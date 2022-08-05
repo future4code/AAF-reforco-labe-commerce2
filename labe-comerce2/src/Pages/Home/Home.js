@@ -9,7 +9,9 @@ import metebonito from "../../img/metebonito.png";
 import chilenho from "../../img/Chilenho.png";
 import Cart from "./Cart/Cart";
 
+
 function Home() {
+  
   const [order, setOrder] = useState("Crescente");
   const [search, setSearch] = useState("");
   const [minValor, setMinValor] = useState(-Infinity);
@@ -53,6 +55,7 @@ function Home() {
       valor: 15.8,
     },
   ]);
+
   const onChangeOrder = (event) => {
     setOrder(event.target.value);
   };
