@@ -6,15 +6,15 @@ function Header(props) {
   return (
     <C.AreaHeader>
       <C.AreaCenter>
-
         <C.FotoNome>
-        <img width="100px" src={vaza}></img>
-        <h1>LabeEcomerce</h1>
+          <img width="100px" src={vaza}></img>
+          <h1>LabeEcomerce</h1>
         </C.FotoNome>
 
         <C.AreaList>
-          <button onClick={()=> props.escolheTela("home")}>Home</button>
-          <button onClick={()=> props.escolheTela("cart")}>Carrinho</button>
+          <ul>
+            <li>Carrinho</li>
+          </ul>
         </C.AreaList>
       </C.AreaCenter>
     </C.AreaHeader>

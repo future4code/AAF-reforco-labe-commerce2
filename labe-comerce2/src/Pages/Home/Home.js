@@ -52,6 +52,7 @@ function Home(props) {
       valor: 15.8,
     },
   ]);
+
   const onChangeOrder = (event) => {
     setOrder(event.target.value);
   };
@@ -67,17 +68,16 @@ function Home(props) {
 
   // const filtro = produtos
 
- const carrinho = (id) => {
-  const copyArray = [...produtos]
-    const selectItem = copyArray.filter((item)=> {
-    if(item.id === id){
-      return props.cart
-    } 
-
-    })
-    props.setCart(selectItem)
-    console.log(selectItem)
-  }
+  const carrinho = (id) => {
+    const copyArray = [...produtos];
+    const selectItem = copyArray.filter((item) => {
+      if (item.id === id) {
+        return props.cart;
+      }
+    });
+    props.setCart(selectItem);
+    console.log(selectItem);
+  };
 
   const resultado = produtos
     .sort((a, b) => {
@@ -112,7 +112,7 @@ function Home(props) {
   });
 
   return (
-    <C.Container> 
+    <C.Container>
       <C.Filtrozin>
         <input placeholder="Buscar" value={search} onChange={onChangeSearch} />
         <input
@@ -134,9 +134,7 @@ function Home(props) {
           <option value="Decrescente">Decrescente</option>
         </select>
       </C.Filtrozin>
-      <C.ContainerFilho>
-        {listaDeProdutos}
-        </C.ContainerFilho>
+      <C.ContainerFilho>{listaDeProdutos}</C.ContainerFilho>
     </C.Container>
   );
 }
