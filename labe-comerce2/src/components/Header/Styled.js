@@ -8,6 +8,7 @@ export const AreaHeader = styled.header`
   display: flex;
   position: fixed;
   width: 100%;
+  padding: 0px 10px;
 `
 
 export const AreaCenter = styled.header`
@@ -27,15 +28,16 @@ export const FotoNome = styled.div`
 `
 
 export const AreaList = styled.div`
-  ul {
-    display: flex;
-    list-style-type: none;
-   
+  button {
+  color: white;
+  background: transparent;
+  padding: 5px 10px;
+  border: solid white 1px;
+  border-radius: 10px;
+  margin-top: 5px;
+  transition: 0.2s;
+  :hover{
+    background-color: #393186;
   }
-  li {
-    padding: 20px;
-  }
-  @media(max-width: 795px){
-    display: none;
-  }
+}
 `
