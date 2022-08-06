@@ -2,7 +2,9 @@ import * as C from "./styled";
 import React, { useState, useEffect } from "react";
 // import { carrinho } from '../../Pages/Home/Home'
 
+
 export function Card(props) {
+
   return (
   
       <C.AreaCard>

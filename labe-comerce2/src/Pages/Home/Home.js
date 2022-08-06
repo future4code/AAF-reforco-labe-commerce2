@@ -7,16 +7,13 @@ import ibitira from "../../img/Ibitira.png";
 import siderolitos from "../../img/siderolitos.png";
 import metebonito from "../../img/metebonito.png";
 import chilenho from "../../img/Chilenho.png";
-import Cart from "./Cart/Cart";
+import { Carrinho } from "../Carrinho/Carrinho";
 
-
-function Home() {
-  
+function Home(props) {
   const [order, setOrder] = useState("Crescente");
   const [search, setSearch] = useState("");
   const [minValor, setMinValor] = useState(-Infinity);
   const [maxValor, setMaxValor] = useState(+Infinity);
-  const [cart, setCart] = useState([])
   const [produtos, setProdutos] = useState([
     {
       id: 1,
@@ -71,23 +68,16 @@ function Home() {
 
   // const filtro = produtos
 
- const carrinho = (id) => {
-    const selectItem = produtos.filter((item)=> {
-    if(item.id === id){
-      return cart.push({id: id})
-    }
-    })
-   
-    setCart(selectItem)
-    console.log(selectItem)
-  }
-
-  const enviarCart = cart.map((item)=> {
-    return <Cart
-        cart={item}
-      />
-  })
-
+  const carrinho = (id) => {
+    const copyArray = [...produtos];
+    const selectItem = copyArray.filter((item) => {
+      if (item.id === id) {
+        return props.cart;
+      }
+    });
+    props.setCart(selectItem);
+    console.log(selectItem);
+  };
 
   const resultado = produtos
     .sort((a, b) => {
@@ -120,12 +110,9 @@ function Home() {
       />
     );
   });
-  // const renderiza = produtos.map((produto) => {
-  //   return <Card imagem={produto.imagem} name={produto.name} valor={produto.valor} produtos={produto}/>
-  // })
+
   return (
     <C.Container>
-   
       <C.Filtrozin>
         <input placeholder="Buscar" value={search} onChange={onChangeSearch} />
         <input
@@ -147,9 +134,7 @@ function Home() {
           <option value="Decrescente">Decrescente</option>
         </select>
       </C.Filtrozin>
-      <C.ContainerFilho>
-        {listaDeProdutos}
-        </C.ContainerFilho>
+      <C.ContainerFilho>{listaDeProdutos}</C.ContainerFilho>
     </C.Container>
   );
 }
