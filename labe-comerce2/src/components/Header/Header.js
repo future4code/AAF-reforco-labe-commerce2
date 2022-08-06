@@ -12,9 +12,8 @@ function Header(props) {
         </C.FotoNome>
 
         <C.AreaList>
-          <ul>
-            <li>Carrinho</li>
-          </ul>
+          <button onClick={() => props.escolheTela("home")}>Home</button>
+          <button onClick={() => props.escolheTela("cart")}>Carrinho</button>
         </C.AreaList>
       </C.AreaCenter>
     </C.AreaHeader>

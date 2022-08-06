@@ -39,6 +39,7 @@ function Home(props) {
       name: "Siderolitos",
       valor: 15.8,
     },
+
     {
       id: 5,
       imagem: metebonito,
@@ -69,13 +70,14 @@ function Home(props) {
   // const filtro = produtos
 
   const carrinho = (id) => {
-    const copyArray = [...produtos];
-    const selectItem = copyArray.filter((item) => {
+    const selectItem = produtos.filter((item) => {
       if (item.id === id) {
         return props.cart;
       }
     });
+
     props.setCart(selectItem);
+    const copyArray = [...produtos, props.cart];
     console.log(selectItem);
   };
 
