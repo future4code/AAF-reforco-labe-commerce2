@@ -39,6 +39,7 @@ function Home(props) {
       name: "Siderolitos",
       valor: 15.8,
     },
+
     {
       id: 5,
       imagem: metebonito,
@@ -69,14 +70,22 @@ function Home(props) {
   // const filtro = produtos
 
   const carrinho = (id) => {
-    const copyArray = [...produtos];
-    const selectItem = copyArray.filter((item) => {
-      if (item.id === id) {
-        return props.cart;
-      }
+    // findIndex retorna a posição do item no carrinho
+    const isCart = props.cart.findIndex((item) => {
+      return item.id === id;
     });
-    props.setCart(selectItem);
-    console.log(selectItem);
+    // se o valor for -1 significa que o item não esta no carrinho
+    if (isCart === -1) {
+      const selectItem = produtos.find((item) => {
+        if (item.id === id) {
+          return item;
+        }
+      });
+      props.setCart([...props.cart, selectItem]);
+    }
+    // console.log(selectItem)
+    console.log(props.cart);
+    console.log(isCart);
   };
 
   const resultado = produtos
