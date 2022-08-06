@@ -30,7 +30,7 @@ select {
 }
 input {
 
-  color: white; 
+  color: #fff; 
   border: solid white 1px;
   background-color: transparent;
   padding: 5px 10px;
